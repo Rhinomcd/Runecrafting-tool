@@ -1,6 +1,7 @@
 <form action="">
 	<ul>
-		<li><input type="checkbox" name="Abyss" value="Abyss">Abyss</li>
-		<li><input name="level"> Runecrafting Level</li>
+		<li><input #abysscb type="checkbox" (change)="abyss=abysscb.checked">Abyss</li>
+		<li><input #rclevel (keyup)="level = rclevel.value"> Runecrafting Level</li>
   </ul>
+  <p>{{level}}</p>
 </form>
