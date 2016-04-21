@@ -2,15 +2,12 @@ import {Component, ViewEncapsulation} from 'angular2/core';
 import {ROUTER_DIRECTIVES, RouteConfig} from 'angular2/router';
 
 import {HomeCmp} from '../home/home';
-import {NameList} from '../../services/name_list';
-import {UsersCmp} from '../users/users';
-import {UserService} from '../users/services/user_service';
-
-import {componentProxyFactory} from '../../services/component_proxy';
+import {SettingsCmp} from '../settings/settings';
+import {RunescapeService} from '../../services/runescape.service';
 
 @Component({
   selector: 'app',
-  viewProviders: [NameList, UserService],
+  viewProviders: [RunescapeService],
   templateUrl: './components/app/app.html',
   styleUrls: ['./components/app/app.css'],
   encapsulation: ViewEncapsulation.None,
@@ -18,14 +15,6 @@ import {componentProxyFactory} from '../../services/component_proxy';
 })
 @RouteConfig([
   { path: '/home', component: HomeCmp, as: 'Home', useAsDefault: true },
-  {
-    path: '/about',
-    component: componentProxyFactory({
-      path: './components/about/about',
-      provide: m => m.AboutCmp
-    }),
-    as: 'About'
-  },
-  { path: '/users/...', component: UsersCmp, as: 'Users' }
-])
+  { path: '/settings', component: SettingsCmp, as: 'Settings', useAsDefault: false }
+  ])
 export class AppCmp {}

@@ -1,10 +1,28 @@
-<h1>Howdy!</h1>
+<div id="settings-group">
+<settings> </settings>
+</div>
+<div class="panel-group">
+  <div *ngFor="#item of items | orderBy : ['-price']" class="panel panel-default">
+    <div class="panel-heading">{{item.name}}</div>
+    <div class="panel-body">
+    	<ul>
+    	<li> Price/Item: {{item.price}}gp</li>
+    	<li> Net price per trip: ?</li>
+    	</ul>
+    </div>
+  </div>
+ 
+</div>
+	<ul>
+     <li *ngFor="#item of items">{{item.name}} -- {{item.price}}</li>
+    </ul> 
+<button (click)='degrease()'>fix it</button>
 
-<h2>
-  Gratz! <smile></smile>
-</h2>
+ <!-- <h1>Wikipedia Demo</h1>
+    <p><i>Fetches after each keystroke</i></p>
 
-<p class="note">
-  Your deployment of Angular 2 Seed worked perfectly!
-  Click <em>about (above)</em> to get your reward!
-</p>
+    <input #term (keyup)="search(term.value)"/> -->
+    
+    <!-- <ul>
+      <li *ngFor="#item of items | async">{{item}}</li>
+    </ul> -->

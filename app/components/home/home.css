@@ -1,3 +1,26 @@
 .note {
-  color: #a8a8a8;
+  color: #7F9582;
+}
+.panel-group {
+	margin: 3%;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-end;
+}
+.panel-heading {
+	text-align: center;
+}
+.panel {
+	margin: 0.5%;
+	width:32%;
+	margin-top: 0;
+
+}
+ul {
+	list-style: none;
+}
+@media only screen and (max-width: 30em) {
+	.panel {
+		width: 100%;
+	}
 }
