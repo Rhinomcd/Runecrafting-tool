@@ -1,7 +1,7 @@
 <form action="">
 	<ul>
 		<li><input #abysscb type="checkbox" (change)="abyss=abysscb.checked">Abyss</li>
-		<li><input #rclevel (keyup)="level = rclevel.value"> Runecrafting Level</li>
+		<li><input #rclevel type="number"(keyup)="level = rclevel.value"> Runecrafting Level</li>
   </ul>
   <p>{{level}}</p>
 </form>
