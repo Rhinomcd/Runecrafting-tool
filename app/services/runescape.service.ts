@@ -14,6 +14,7 @@ export class RunescapeService {
 
   updatePrices() {
     var sourceItems: Item[] = ITEMS;
+    this.clearOldPrices();
 
     for (var item of sourceItems) {
       var search = this.search(item.id);
@@ -21,6 +22,10 @@ export class RunescapeService {
       console.log(item.name);
     }
      return this.priceData;
+  }
+
+  private clearOldPrices() {
+    this.priceData = [];
   }
 
   private createPriceData(res: any) {
