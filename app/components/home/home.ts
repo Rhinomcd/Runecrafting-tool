@@ -29,8 +29,5 @@ export class HomeCmp {
       triptotal = Number(item.price) * crafted;
     }
   }
-    degrease() {
-      console.log(this.items);
-    }
   }
 
