@@ -2,6 +2,7 @@ import {Component}        from 'angular2/core';
 import {RunescapeService} from '../../services/runescape.service';
 import {OrderBy}          from './orderBy.pipe';
 import {SettingsCmp}      from '../settings/settings';
+import {Item}             from './model/Item';
 
 @Component({
   selector: 'home',
@@ -13,21 +14,22 @@ import {SettingsCmp}      from '../settings/settings';
 })
 
 export class HomeCmp {
-  items;
+  items: Item[];
+  rclevel: number;
 
   constructor (private _RunescapeService: RunescapeService) {};
 
 
   ngOnInit() {
+    console.log(this.items);
     this.items = this._RunescapeService.updatePrices();
   }
 
-  calculatePricePerTrip() {
-    var triptotal;
+  calculatePricePerTrip(item: Item) {
     var crafted = 28;
-    for (var item of this.items) {
-      triptotal = Number(item.price) * crafted;
-    }
+
+
+    return Number(item.price) * crafted;
   }
   }
 
