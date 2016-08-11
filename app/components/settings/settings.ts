@@ -8,6 +8,6 @@ import {Component}        from 'angular2/core';
 })
 
 export class SettingsCmp {
-	tripDuration: number;
-  level = 0;
+  tripDuration: number;
+  level: number = 0;
 }

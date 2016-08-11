@@ -15,9 +15,10 @@ import {Item}             from './model/Item';
 
 export class HomeCmp {
   items: Item[];
-  rclevel: number;
 
+  rclevel: number;
   constructor (private _RunescapeService: RunescapeService) {};
+
 
 
   ngOnInit() {
@@ -28,8 +29,26 @@ export class HomeCmp {
   calculatePricePerTrip(item: Item) {
     var crafted = 28;
 
+    switch (item.name) {
+      case 'Nature Rune':
+        if (this.rclevel >= 91) {
+          crafted = crafted * 2;
+        }
+        break;
 
+      case 'Cosmic Rune':
+        if (this.rclevel >= 59) {
+          crafted = crafted * 2;
+        }
+
+      case 'Astral Rune':
+      if (this.rclevel >= 82) {
+        crafted = crafted * 2;
+      }
+      default:
+        break;
+    }
     return Number(item.price) * crafted;
   }
-  }
+}
 

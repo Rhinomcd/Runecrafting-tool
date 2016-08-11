@@ -2,7 +2,7 @@
 <settings> </settings>
 </div>
 <div class="panel-group">
-  <div *ngFor="#item of items" class="panel panel-default">
+  <div *ngFor="#item of items| orderBy: ['-price']" class="panel panel-default">
     <div class="panel-heading">{{item.name}}</div>
     <div class="panel-body">
     	<ul>
