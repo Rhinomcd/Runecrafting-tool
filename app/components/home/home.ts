@@ -14,10 +14,23 @@ import {SettingsCmp}      from '../settings/settings';
 
 export class HomeCmp {
   items;
-	constructor (private _RunescapeService: RunescapeService) {};
+
+  constructor (private _RunescapeService: RunescapeService) {};
 
 
- 	ngOnInit() {
-   this.items = this._RunescapeService.updatePrices();
- 	}
-}
+  ngOnInit() {
+    this.items = this._RunescapeService.updatePrices();
+  }
+
+  calculatePricePerTrip() {
+    var triptotal;
+    var crafted = 28;
+    for (var item of this.items) {
+      triptotal = Number(item.price) * crafted;
+    }
+  }
+    degrease() {
+      console.log(this.items);
+    }
+  }
+
