@@ -38,6 +38,7 @@ export class HomeCmp {
   }
 
   calculatePricePerTrip(item: Item) {
-    return this._PriceCalculator.calcRevenue(item);
+    item.revenue = this._PriceCalculator.calcRevenue(item);
+    return item.revenue;
   }
 }

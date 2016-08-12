@@ -2,12 +2,12 @@
 <settings (settingsChange)="settingsChange($event)"> </settings>
 </div>
 <div class="panel-group">
-  <div *ngFor="#item of items| orderBy: ['-price']" class="panel panel-default">
+  <div *ngFor="#item of items| orderBy: ['-revenue']" class="panel panel-default">
     <div class="panel-heading">{{item.name}}</div>
     <div class="panel-body">
     	<ul>
     	<li> Price/Item: {{item.price}}gp</li>
-    	<li> Net price per trip: {{calculatePricePerTrip(item)}}</li>
+    	<li> Revenue/trip: {{calculatePricePerTrip(item)}}</li>
     	</ul>
     </div>
   </div>
