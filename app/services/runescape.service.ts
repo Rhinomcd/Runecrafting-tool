@@ -29,7 +29,6 @@ export class RunescapeService {
   }
 
   private createPriceData(res: any) {
-    console.log(res);
     this.priceData.push(new Item(res.name, res.current.price, res.id));
   }
 
@@ -51,8 +50,7 @@ export class RunescapeService {
 
     private handleError (error: any) {
     // In a real world app, we might send the error to remote logging infrastructure
-    let errMsg = error.message || 'Server error';
-    console.error(errMsg); // log to console instead
+    let errMsg = 'We\'re having trouble connecting to the old school servers, please try again later';
     return Observable.throw(errMsg);
   }
 }
