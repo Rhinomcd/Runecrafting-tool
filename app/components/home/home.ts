@@ -22,26 +22,33 @@ export class HomeCmp {
 
 
   ngOnInit() {
-    console.log(this.items);
     this.items = this._RunescapeService.updatePrices();
+  }
+
+  levelChange(event) {
+    this.rclevel = event.value;
   }
 
   calculatePricePerTrip(item: Item) {
     var crafted = 28;
-
-    switch (item.name) {
-      case 'Nature Rune':
+    console.log(item.id)
+    if (item.id == '561'){
+      console.log("trueth!23432")
+    }
+    switch (item.id) {
+      case '561': //Nature
+          console.log('In nats')
         if (this.rclevel >= 91) {
           crafted = crafted * 2;
         }
         break;
 
-      case 'Cosmic Rune':
+      case 'Cosmic Rune': //Cosmic
         if (this.rclevel >= 59) {
           crafted = crafted * 2;
         }
 
-      case 'Astral Rune':
+      case '9075': //Astral
       if (this.rclevel >= 82) {
         crafted = crafted * 2;
       }

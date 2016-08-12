@@ -1,7 +1,7 @@
 <form action="">
 	<ul>
 		<li><input value = 120 #duration type="number" (change)="tripDuration = duration.value"> Trip Duration in Seconds</li>
-		<li><input #rclevel type="number"(keyup)="level = rclevel.value"> Runecrafting Level</li>
+		<li><input #rclevel type="number"(keyup)="updateLevel(rclevel.value)"> Runecrafting Level</li>
   </ul>
   <p>{{level}}</p>
 </form>
