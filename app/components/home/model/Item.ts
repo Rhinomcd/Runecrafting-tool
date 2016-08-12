@@ -1,7 +1,7 @@
 // model/item.ts
 
 export class Item {
-  constructor(name: string, price: string, id: string) {
+  constructor(name: string, price: string, id: number) {
     this.name = name;
     this.price = price;
     this.id = id;
@@ -9,6 +9,6 @@ export class Item {
 
 
    name: string;
-   id: string;
+   id: number;
    price: string;
 }

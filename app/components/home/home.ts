@@ -30,27 +30,24 @@ export class HomeCmp {
   }
 
   calculatePricePerTrip(item: Item) {
-    var crafted = 28;
-    console.log(item.id)
-    if (item.id == '561'){
-      console.log("trueth!23432")
-    }
+    var baseCrafted = 28;
+    var crafted = baseCrafted;
     switch (item.id) {
-      case '561': //Nature
-          console.log('In nats')
+      case 561: //Nature
+          console.log('In nats');
         if (this.rclevel >= 91) {
-          crafted = crafted * 2;
+          crafted = baseCrafted * 2;
         }
         break;
 
-      case 'Cosmic Rune': //Cosmic
+      case 564: //Cosmic
         if (this.rclevel >= 59) {
-          crafted = crafted * 2;
+          crafted = baseCrafted * 2;
         }
 
-      case '9075': //Astral
+      case 9075: //Astral
       if (this.rclevel >= 82) {
-        crafted = crafted * 2;
+        crafted = baseCrafted * 2;
       }
       default:
         break;

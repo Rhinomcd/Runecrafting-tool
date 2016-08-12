@@ -33,7 +33,7 @@ export class RunescapeService {
     this.priceData.push(new Item(res.name, res.current.price, res.id));
   }
 
-   private search (itemId: string): Observable<any> {
+   private search (itemId: number): Observable<any> {
     let apiURL = 'http://services.runescape.com/m=itemdb_oldschool/api/catalogue/detail.json'+'?item='+itemId;
 
     return this.http.get(apiURL)
