@@ -3,9 +3,12 @@
 		<li><input #rclevel value = 1 type="number"(keyup)="updateLevel(rclevel.value)"> Runecrafting Level</li>
   </ul>
   <div id="pouches">
-    <input #small type="checkbox"(change)="updateSmallPouch(small.checked)">Small Pouch(1)
-    <input #medium type="checkbox"(change)="updateMediumPouch(medium.checked)">Medium Pouch(25)
-    <input #large type="checkbox"(change)="updateLargePouch(large.checked)">Large Pouch(50)
-    <input #giant type="checkbox"(change)="updateGiantPouch(giant.checked)">Giant Pouch(75)
-    <br>
+    <input #small id="small-pouch"type="checkbox"(change)="updateSmallPouch(small.checked)">
+    <label for="small-pouch">Small Pouch(1)</label>
+    <input #medium id="medium-pouch" type="checkbox"(change)="updateMediumPouch(medium.checked)">
+    <label for="medium-pouch">Medium Pouch(25)</label>
+    <input #large id="large-pouch" type="checkbox"(change)="updateLargePouch(large.checked)">
+    <label for="large-pouch">Large Pouch(50)</label>
+    <input #giant id="giant-pouch" type="checkbox"(change)="updateGiantPouch(giant.checked)">
+    <label for="giant-pouch">Giant Pouch(75)</label>
   </div>

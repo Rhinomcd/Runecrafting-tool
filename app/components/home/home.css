@@ -6,7 +6,24 @@
 	display: flex;
 	flex-wrap: wrap;
 	align-items: flex-end;
+	color: black;
+} 
+
+#settings-cog {
+	display: none;
 }
+#settings-cog:checked + label::after {
+    content: "<settings> </settings>";
+
+}
+
+#settings-group {
+		display: none;
+		border-style: solid;
+    border-width: 5px;
+    border-color: white;
+  }
+
 .panel-heading {
 	text-align: center;
 }
@@ -14,7 +31,6 @@
 	margin: 0.5%;
 	width:32%;
 	margin-top: 0;
-
 }
 ul {
 	list-style: none;

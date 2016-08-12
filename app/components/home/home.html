@@ -1,6 +1,11 @@
+<input type="checkbox" id=settings-cog>
+<label for="settings-cog">click to open settings
+<p>herp</p>
 <div id="settings-group">
 <settings (settingsChange)="settingsChange($event)"> </settings>
 </div>
+</label>
+
 <div class="panel-group">
 <div *ngIf="items.length < 1"> We're having trouble connecting to the oldschool runescape servers. Sorry for the Inconvienience"</div>
   <div *ngFor="#item of items| orderBy: ['-revenue']" class="panel panel-default">
