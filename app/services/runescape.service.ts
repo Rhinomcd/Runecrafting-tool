@@ -2,7 +2,7 @@
 import {Injectable} from 'angular2/core';
 import {Http, Response} from 'angular2/http';
 import {Observable}     from 'rxjs/Observable';
-import {Item}           from '../components/home/model/item';
+import {Item}           from '../model/item';
 import {ITEMS}          from '../data/items';
 
 

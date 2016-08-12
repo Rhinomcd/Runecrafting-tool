@@ -1,5 +1,5 @@
 <div id="settings-group">
-<settings (levelChange)="levelChange($event)"> </settings>
+<settings (settingsChange)="settingsChange($event)"> </settings>
 </div>
 <div class="panel-group">
   <div *ngFor="#item of items| orderBy: ['-price']" class="panel panel-default">

@@ -1,7 +1,11 @@
-<form action="">
 	<ul>
-		<li><input value = 120 #duration type="number" (change)="tripDuration = duration.value"> Trip Duration in Seconds</li>
-		<li><input #rclevel type="number"(keyup)="updateLevel(rclevel.value)"> Runecrafting Level</li>
+		<li><input #duration value = 120 type="number" (change)="tripDuration = duration.value"> Trip Duration in Seconds</li>
+		<li><input #rclevel value = 1 type="number"(keyup)="updateLevel(rclevel.value)"> Runecrafting Level</li>
   </ul>
-  <p>{{level}}</p>
-</form>
+  <div id="pouches">
+    <input #small type="checkbox"(change)="updateSmallPouch(small.checked)">Small Pouch(1)
+    <input #medium type="checkbox"(change)="updateMediumPouch(medium.checked)">Medium Pouch(25)
+    <input #large type="checkbox"(change)="updateLargePouch(large.checked)">Large Pouch(50)
+    <input #giant type="checkbox"(change)="updateGiantPouch(giant.checked)">Giant Pouch(75)
+    <br>
+  </div>

@@ -1,4 +1,4 @@
-import {Item} from '../components/home/model/item.ts';
+import {Item} from '../model/item.ts';
 
 export var ITEMS: Item[] = [
         {

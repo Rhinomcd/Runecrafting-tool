@@ -1,4 +1,5 @@
 import {Component, Output, EventEmitter}        from 'angular2/core';
+import {SettingsObject}   from '../../model/SettingsObject';
 
 
 @Component({
@@ -9,13 +10,40 @@ import {Component, Output, EventEmitter}        from 'angular2/core';
 
 export class SettingsCmp {
   tripDuration: number;
-  level: number = 0;
-  @Output() levelChange = new EventEmitter();
+  Defaultlevel: number = 1;
+
+  DefaultPouches = {
+    small: false,
+    medium: false,
+    large: false,
+    giant: false
+  };
+
+  Settings: SettingsObject = {
+    rclevel: this.Defaultlevel,
+    Pouches: this.DefaultPouches
+  };
+
+  @Output() settingsChange = new EventEmitter();
 
   updateLevel(newLevel:number) {
-  	this.level = newLevel;
-  	this.levelChange.emit({
-  		value: this.level
-  	});
+  	this.Settings.rclevel = newLevel;
+  	this.settingsChange.emit(this.Settings);
+  }
+  updateSmallPouch(state: boolean) {
+    this.Settings.Pouches.small = state;
+    this.settingsChange.emit(this.Settings);
+  }
+  updateMediumPouch(state: boolean) {
+    this.Settings.Pouches.medium = state;
+    this.settingsChange.emit(this.Settings);
+  }
+  updateLargePouch(state: boolean) {
+    this.Settings.Pouches.large = state;
+    this.settingsChange.emit(this.Settings);
+  }
+  updateGiantPouch(state: boolean) {
+    this.Settings.Pouches.giant = state;
+    this.settingsChange.emit(this.Settings);
   }
 }

@@ -1,13 +1,14 @@
-import {Component, ViewEncapsulation} from 'angular2/core';
+import {Component, ViewEncapsulation}   from 'angular2/core';
 import {ROUTER_DIRECTIVES, RouteConfig} from 'angular2/router';
 
-import {HomeCmp} from '../home/home';
-import {SettingsCmp} from '../settings/settings';
-import {RunescapeService} from '../../services/runescape.service';
+import {HomeCmp}                        from '../home/home';
+import {SettingsCmp}                    from '../settings/settings';
+import {RunescapeService}               from '../../services/runescape.service';
+import {PriceCalculator}                from '../../services/priceCalculator';
 
 @Component({
   selector: 'app',
-  viewProviders: [RunescapeService],
+  viewProviders: [RunescapeService, PriceCalculator],
   templateUrl: './components/app/app.html',
   styleUrls: ['./components/app/app.css'],
   encapsulation: ViewEncapsulation.None,
