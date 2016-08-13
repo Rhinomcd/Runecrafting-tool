@@ -1,3 +1,11 @@
+@-webkit-keyframes slide {
+	  from {height:auto;}
+	to {height:100px;}
+}
+@-webkit-keyframes slideout {
+	  from {height:;}
+	to {height:0px;}
+}
 .note {
   color: #7F9582;
 }
@@ -12,17 +20,28 @@
 #settings-cog {
 	display: none;
 }
-#settings-cog:checked + label::after {
-    content: "<settings> </settings>";
 
+#settings-cog:checked + label + #settings-group {
+	display: block;
+	height: 100px;
+	overflow:auto;
+	animation: slide;
+	animation-duration: 0.65s;
+}
+#settings-group {
+	display: none;
+}
+#settings-cog:not(:checked) + label + #settings-group {
+	display: block;
+	height: 0px;
+	overflow:auto;
+	animation: slideout;
+	animation-duration: 0.65s;
 }
 
-#settings-group {
-		display: none;
-		border-style: solid;
-    border-width: 5px;
-    border-color: white;
-  }
+  #settings-group::-webkit-scrollbar { 
+    display: none; 
+}
 
 .panel-heading {
 	text-align: center;
@@ -33,7 +52,7 @@
 	margin-top: 0;
 }
 ul {
-	list-style: none;
+	list-style-type: none;
 }
 @media only screen and (max-width: 30em) {
 	.panel {

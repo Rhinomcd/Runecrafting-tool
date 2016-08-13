@@ -1,5 +1,12 @@
+
+
+
 input[type="number"], textarea {
 
   background-color : #d1d1d1; 
   color: black;
+}
+
+ul {
+	list-style: none;
 }

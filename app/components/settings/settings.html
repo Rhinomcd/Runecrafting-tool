@@ -1,4 +1,5 @@
-	<ul>
+<div id="animation-container">	
+  <ul>
 		<li><input #duration value = 120 type="number" (change)="tripDuration = duration.value"> Trip Duration in Seconds</li>
 		<li><input #rclevel value = 1 type="number"(keyup)="updateLevel(rclevel.value)"> Runecrafting Level</li>
   </ul>
@@ -12,3 +13,4 @@
     <input #giant id="giant-pouch" type="checkbox"(change)="updateGiantPouch(giant.checked)">
     <label for="giant-pouch">Giant Pouch(75)</label>
   </div>
+</div>
