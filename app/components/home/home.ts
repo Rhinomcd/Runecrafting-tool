@@ -1,10 +1,12 @@
 import {Component}        from 'angular2/core';
 import {RunescapeService} from '../../services/runescape.service';
 import {PriceCalculator}  from '../../services/priceCalculator';
+import {LevelCalculator}  from '../../services/levelcalculator';
 import {OrderBy}          from './orderBy.pipe';
 import {SettingsCmp}      from '../settings/settings';
 import {Item}             from '../../model/Item';
-import {SettingsObject}             from '../../model/SettingsObject';
+import {SettingsObject}   from '../../model/SettingsObject';
+
 
 
 @Component({
@@ -21,12 +23,14 @@ export class HomeCmp {
   settings: SettingsObject;
   items: Item[];
   _PriceCalculator;
+  _LevelCalculator;
 
 
   ngOnInit() {
     this.items = this._RunescapeService.updatePrices();
     this.settings = new SettingsObject();
     this._PriceCalculator = new PriceCalculator(this.settings);
+    this._LevelCalculator = new LevelCalculator(this.settings);
   }
 
   settingsChange(event) {
@@ -38,7 +42,12 @@ export class HomeCmp {
     item.revenue = this._PriceCalculator.calcRevenue(item);
     return item.revenue;
   }
+
   calculateGP(item: Item): number {
     return this._PriceCalculator.calcGP(item);
+  }
+
+  validateCraftingLevel(item: Item) {
+    return this._LevelCalculator.checkLevels(item);
   }
 }

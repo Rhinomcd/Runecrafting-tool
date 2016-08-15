@@ -1,4 +1,5 @@
 import {Component, Output, EventEmitter}        from 'angular2/core';
+import {Validator} from 'angular2/common';
 import {SettingsObject}   from '../../model/SettingsObject';
 
 

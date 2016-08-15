@@ -12,11 +12,9 @@ export class PriceCalculator {
   }
   public calcGP(item: Item): number {
     let hour = 3600;
-    console.log('rev:' + item.revenue);
-    console.log('duration:' + this.settings.tripDuration);
     return (hour / this.settings.tripDuration) * item.revenue;
   }
-
+  
   public calcRevenue(item: Item): number {
       var baseCrafted = 28 + this.pouchMath();
       var crafted = baseCrafted;

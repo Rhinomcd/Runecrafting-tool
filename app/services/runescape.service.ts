@@ -19,7 +19,6 @@ export class RunescapeService {
     for (var item of sourceItems) {
       var search = this.search(item.id);
       search.subscribe(res => this.createPriceData(res));
-      console.log(item.name);
     }
      return this.priceData;
   }
