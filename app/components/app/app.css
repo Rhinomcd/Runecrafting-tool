@@ -2,4 +2,8 @@ body {
   background-color:  #393937;
   color: white;
   font-family: 'Roboto', sans-serif;
+
+}
+#logo {
+  padding: 25px;
 }

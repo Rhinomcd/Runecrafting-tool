@@ -9,20 +9,8 @@ import {SettingsObject}   from '../../model/SettingsObject';
 })
 
 export class SettingsCmp {
-  tripDuration: number;
-  Defaultlevel: number = 1;
 
-  DefaultPouches = {
-    small: false,
-    medium: false,
-    large: false,
-    giant: false
-  };
-
-  Settings: SettingsObject = {
-    rclevel: this.Defaultlevel,
-    Pouches: this.DefaultPouches
-  };
+  Settings: SettingsObject = new SettingsObject();
 
   @Output() settingsChange = new EventEmitter();
 
@@ -45,5 +33,11 @@ export class SettingsCmp {
   updateGiantPouch(state: boolean) {
     this.Settings.Pouches.giant = state;
     this.settingsChange.emit(this.Settings);
+  }
+
+  updateDuration(newduration: number) {
+    this.Settings.tripDuration = newduration;
+    this.settingsChange.emit(this.Settings);
+
   }
 }

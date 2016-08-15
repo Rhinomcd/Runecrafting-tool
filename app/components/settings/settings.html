@@ -1,7 +1,6 @@
-<div id="animation-container">	
   <ul>
-		<li><input #duration value = 120 type="number" (change)="tripDuration = duration.value"> Trip Duration in Seconds</li>
-		<li><input #rclevel value = 1 type="number"(keyup)="updateLevel(rclevel.value)"> Runecrafting Level</li>
+		<li><input #duration value="120" ngModelminlength="1" ngModelmaxlength="3600" type="number" (keyup)="updateDuration(duration.value)"> Trip Duration in Seconds</li>
+		<li><input #rclevel value="1" type="number" ngModelminlength="1" ngModelmaxlength="99" (keyup)="updateLevel(rclevel.value)"> Runecrafting Level</li>
   </ul>
   <div id="pouches">
     <input #small id="small-pouch"type="checkbox"(change)="updateSmallPouch(small.checked)">
@@ -13,4 +12,3 @@
     <input #giant id="giant-pouch" type="checkbox"(change)="updateGiantPouch(giant.checked)">
     <label for="giant-pouch">Giant Pouch(75)</label>
   </div>
-</div>

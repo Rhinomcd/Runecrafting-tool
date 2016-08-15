@@ -1,19 +1,21 @@
-<input type="checkbox" id=settings-cog>
-<label for="settings-cog">click to open settings</label>
+<input type="checkbox" checked id=settings-cog-cb>
+<label for="settings-cog-cb"> <img src="./assets/settings-cog.svg" height="25px" width="25px"></label>
 <div id="settings-group">
-<settings (settingsChange)="settingsChange($event)"> </settings>
+  <settings (settingsChange)="settingsChange($event)"> </settings>
 </div>
+
 <div class="panel-group">
-<div *ngIf="items.length < 1"> We're having trouble connecting to the oldschool runescape servers. Sorry for the Inconvienience"</div>
-  <div *ngFor="#item of items| orderBy: ['-revenue']" class="panel panel-default">
+  <div *ngIf="items.length < 1"> We're having trouble connecting to the oldschool runescape servers. Sorry for the Inconvienience"</div>
+  <div *ngFor="#item of items | orderBy: ['-revenue'];#index = index;" [class.panel-success]="index == 0" class="panel panel-default">
     <div class="panel-heading">{{item.name}}</div>
     <div class="panel-body">
     	<ul>
-    	<li> Price/Item: {{item.price}}gp</li>
-    	<li> Revenue/trip: {{calculatePricePerTrip(item)}}</li>
-    	</ul>
-    </div>
-  </div>
+       <li> Price/Item: {{item.price}}gp</li>
+       <li> Revenue/trip: {{calculatePricePerTrip(item)| number}}</li>
+       <li> Gp/Hour: {{calculateGP(item) | number}}
+     </ul>
 
- 
+      <img class="item-icon" src="http://services.runescape.com/m=itemdb_oldschool/5279_obj_sprite.gif?id={{item.id}}">
+   </div>
+ </div>
 </div>

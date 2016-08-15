@@ -31,14 +31,14 @@ export class HomeCmp {
 
   settingsChange(event) {
     this.settings = event;
-        console.log(this.settings);
-
     this._PriceCalculator = new PriceCalculator(this.settings);
-
   }
 
-  calculatePricePerTrip(item: Item) {
+  calculatePricePerTrip(item: Item) : number  {
     item.revenue = this._PriceCalculator.calcRevenue(item);
     return item.revenue;
+  }
+  calculateGP(item: Item): number {
+    return this._PriceCalculator.calcGP(item);
   }
 }

@@ -2,7 +2,7 @@
 export class SettingsObject {
   constructor() {
     this.rclevel = 1;
-
+    this.tripDuration = 120;
     this.Pouches = {
       small: false,
       medium: false,
@@ -11,6 +11,7 @@ export class SettingsObject {
     };
   };
 
+  tripDuration: number;
   rclevel: number;
   Pouches: {
     small: boolean,
